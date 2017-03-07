@@ -19,4 +19,13 @@ public class VectorImpl implements IVector {
         result.addAll(v);
         return result;
     }
+
+    public static Vector<Integer> addVectors(Vector<Integer> v, Vector<Integer> vec) {
+        {
+            Vector<Integer> result = new Vector<>();
+            result.addAll(v);
+            result.addAll(vec);
+            return result;
+        }
+    }
 }
