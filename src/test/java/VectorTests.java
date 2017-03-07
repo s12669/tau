@@ -1,16 +1,34 @@
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import java.util.Vector;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class VectorTests {
 
-    VectorImpl vector = new VectorImpl();
+    private VectorImpl vector = new VectorImpl();
 
     @Test
-    public void testVector(){
-        assertEquals(4,vector.add(2));
+    public void testEmpty() {
+        assertTrue(vector.getVector().isEmpty());
     }
-    public static void testVectors(){
-        assertEquals(5,vector.add(3,2));
+
+    @Test
+    public void testVectors() {
+        Vector<Integer> vector1 = new Vector<>(2);
+        vector1.add(1);
+        vector1.add(5);
+        vector.setVector(vector1);
+       assertFalse(vector.getVector().isEmpty());
+    }
+
+    @Test
+    public void adding(){
+        Vector<Integer> vector1 = new Vector<>(2);
+        vector1.add(1);
+        Vector<Integer> vector2 = new Vector<>(2);
+        vector2.add(5);
+        assertTrue(vector1.size()==vector2.size());
     }
 }
