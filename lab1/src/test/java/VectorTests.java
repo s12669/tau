@@ -1,4 +1,5 @@
 import org.junit.Test;
+import pl.edu.pjwstk.VectorImpl;
 
 import java.util.Vector;
 
