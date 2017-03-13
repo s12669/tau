@@ -19,6 +19,7 @@
 .idea/**/uiDesigner.xml
 **/.idea/
 .idea
+.gitignore
 
 # Gradle:
 .idea/**/gradle.xml
@@ -99,6 +100,5 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
-.gitignore
 
 # End of https://www.gitignore.io/api/java,windows,intellij
