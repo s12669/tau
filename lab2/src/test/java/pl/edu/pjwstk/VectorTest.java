@@ -22,15 +22,15 @@ public class VectorTest {
         vector1.add(1);
         vector1.add(5);
         vector.setVector(vector1);
-       assertFalse(vector.getVector().isEmpty());
+        assertFalse(vector.getVector().isEmpty());
     }
 
     @Test
-    public void adding(){
+    public void adding() {
         Vector<Integer> vector1 = new Vector<>(2);
         vector1.add(1);
         Vector<Integer> vector2 = new Vector<>(2);
         vector2.add(5);
-        assertTrue(vector1.size()==vector2.size());
+        assertTrue(vector1.size() == vector2.size());
     }
 }
