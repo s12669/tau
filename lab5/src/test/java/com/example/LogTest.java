@@ -171,7 +171,7 @@ public class LogTest {
 
 
     @AfterClass
-    public static void cleanup() {
+    public static void cleanp() {
         driver.quit();
     }
 }
