@@ -30,14 +30,14 @@ public class LogTest {
 
     @Test
     public void panelExistsTest() {
-        driver.get("http://localhost/panel/index.php");
+        driver.get("http://szuflandia.pjwstk.edu.pl/~s12669/TAU/panel/index.php");
         element = driver.findElement(By.name("panel"));
         assertNotNull(element);
     }
 
     @Test
     public void loginFormScreenshotTest() {
-        driver.get("http://localhost/panel/index.php");
+        driver.get("http://szuflandia.pjwstk.edu.pl/~s12669/TAU/panel/index.php");
         element = driver.findElement(By.name("panel"));
         assertNotNull(element);
         element.click();
@@ -64,7 +64,7 @@ public class LogTest {
 
     @Test
     public void loginInorrectTest() {
-        driver.get("http://localhost/panel/index.php");
+        driver.get("http://szuflandia.pjwstk.edu.pl/~s12669/TAU/panel/index.php");
         element = driver.findElement(By.name("panel"));
         assertNotNull(element);
         element.click();
@@ -91,7 +91,7 @@ public class LogTest {
 
     @Test
     public void loginCorrectTest() {
-        driver.get("http://localhost/panel/index.php");
+        driver.get("http://szuflandia.pjwstk.edu.pl/~s12669/TAU/panel/index.php");
         element = driver.findElement(By.name("panel"));
         assertNotNull(element);
         element.click();
@@ -118,7 +118,7 @@ public class LogTest {
 
     @Test
     public void logoutTest() {
-        driver.get("http://localhost/panel/index.php");
+        driver.get("http://szuflandia.pjwstk.edu.pl/~s12669/TAU/panel/index.php?page=admin&edit=glowna");
         element = driver.findElement(By.name("panel"));
         assertNotNull(element);
         element.click();
