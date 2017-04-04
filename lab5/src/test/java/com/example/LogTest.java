@@ -19,8 +19,7 @@ import static org.junit.Assert.*;
 public class LogTest {
 
     private static ChromeDriver driver;
-    WebElement element;
-    String login = "1234";
+    private WebElement element;
 
     @BeforeClass
     public static void driverSetup() {
@@ -42,7 +41,7 @@ public class LogTest {
         element = driver.findElement(By.name("panel"));
         assertNotNull(element);
         element.click();
-        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        File screenshot = driver.getScreenshotAs(OutputType.FILE);
         assertNotNull(screenshot);
         try {
             FileUtils.copyFile(screenshot, new File("./target/screenshots/FormularzLogowania.png"));
@@ -79,7 +78,7 @@ public class LogTest {
         String html = driver.getPageSource();
         assertTrue(html.contains("Niepoprawne hasło!"));
 
-        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        File screenshot = driver.getScreenshotAs(OutputType.FILE);
         assertNotNull(screenshot);
         try {
             FileUtils.copyFile(screenshot, new File("./target/screenshots/NieprawidłoweHasło.png"));
@@ -106,7 +105,7 @@ public class LogTest {
         String html = driver.getPageSource();
         assertTrue(html.contains("Zalogowanie poprawne."));
 
-        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        File screenshot = driver.getScreenshotAs(OutputType.FILE);
         assertNotNull(screenshot);
         try {
             FileUtils.copyFile(screenshot, new File("./target/screenshots/Zalogowano.png"));
@@ -127,7 +126,7 @@ public class LogTest {
         Boolean logged = driver.getCurrentUrl().contains("admin");
         assertFalse(logged);
 
-        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        File screenshot = driver.getScreenshotAs(OutputType.FILE);
         assertNotNull(screenshot);
         try {
             FileUtils.copyFile(screenshot, new File("./target/screenshots/Wylogowanie.png"));
@@ -140,7 +139,7 @@ public class LogTest {
 
     @Test
     public void javascriptTest() {
-        JavascriptExecutor jsEx = (JavascriptExecutor) driver;
+        JavascriptExecutor jsEx = driver;
         assertNotNull(jsEx);
         jsEx.executeScript("function alertPop() { alert('success'); }; alertPop()");
         Alert alert = driver.switchTo().alert();
@@ -151,7 +150,7 @@ public class LogTest {
     @Test
     public void jQueryTest() {
         driver.get("http://localhost/logowanie/");
-        element = (WebElement) ((JavascriptExecutor) driver).executeScript("return $('.img')[0]");
+        element = (WebElement) driver.executeScript("return $('.img')[0]");
         assertNull(element);
     }
 
