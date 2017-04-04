@@ -105,6 +105,10 @@ public class LogTest {
         String html = driver.getPageSource();
         assertTrue(html.contains("Zalogowanie poprawne."));
 
+        element = driver.findElement(By.name("wyloguj"));
+        assertNotNull(element);
+        element.click();
+
         File screenshot = driver.getScreenshotAs(OutputType.FILE);
         assertNotNull(screenshot);
         try {
@@ -121,6 +125,13 @@ public class LogTest {
         driver.get("http://szuflandia.pjwstk.edu.pl/~s12669/TAU/panel/index.php?page=admin&edit=glowna");
         element = driver.findElement(By.name("panel"));
         assertNotNull(element);
+        element.click();
+
+        WebElement form = driver.findElement(By.name("password"));
+        element = driver.findElement(By.name("zaloguj"));
+        form.sendKeys("haslo");
+
+        assertEquals("haslo", form.getAttribute("value"));
         element.click();
 
         element = driver.findElement(By.name("wyloguj"));
