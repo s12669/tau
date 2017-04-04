@@ -25,7 +25,7 @@ public class LogTest {
     public static void driverSetup() {
         System.setProperty("webdriver.chrome.driver", "/Users/macie/Downloads/chromedriver_win32/chromedriver.exe");
         driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
     }
 
     @Test
@@ -153,7 +153,7 @@ public class LogTest {
 
     @Test
     public void jQueryTest() {
-        driver.get("http://localhost/logowanie/");
+        driver.get("http://szuflandia.pjwstk.edu.pl/~s12669/TAU/logowanie/");
         element = (WebElement) driver.executeScript("return $('.img')[0]");
         assertNull(element);
     }
