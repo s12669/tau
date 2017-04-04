@@ -118,7 +118,11 @@ public class LogTest {
 
     @Test
     public void logoutTest() {
-        driver.get("http://localhost/panel/index.php?page=admin");
+        driver.get("http://localhost/panel/index.php");
+        element = driver.findElement(By.name("panel"));
+        assertNotNull(element);
+        element.click();
+
         element = driver.findElement(By.name("wyloguj"));
         assertNotNull(element);
         element.click();
