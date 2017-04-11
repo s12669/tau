@@ -40,6 +40,6 @@ public class SiteSteps {
 
     @Then("the user should not log in")
     public void logInUnsuccessful() {
-        assertTrue(pages.loginpage().logInFail().contains("Niepoprawne hasło!"));
+        assertTrue(!pages.loginpage().logInFail().contains("Zalogowanie poprawne."));
     }
 }
