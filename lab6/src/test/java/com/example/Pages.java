@@ -1,24 +1,24 @@
 package com.example;
 
-import com.example.pages.HelpDesk;
+import com.example.pages.LoginPage;
 import org.jbehave.web.selenium.WebDriverProvider;
 
-public class Pages {
+class Pages {
 
     private WebDriverProvider driverProvider;
 
     //Pages -- moze byc ich kilka
-    private HelpDesk helpDesk;
+    private LoginPage loginPage;
 
-    public Pages(WebDriverProvider driverProvider) {
+    Pages(WebDriverProvider driverProvider) {
         super();
         this.driverProvider = driverProvider;
     }
 
-    public HelpDesk helpdesk() {
-        if (helpDesk == null) {
-            helpDesk = new HelpDesk(driverProvider);
+    LoginPage loginpage() {
+        if (loginPage == null) {
+            loginPage = new LoginPage(driverProvider);
         }
-        return helpDesk;
+        return loginPage;
     }
 }

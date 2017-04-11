@@ -66,6 +66,7 @@ public class SiteStories extends JUnitStories {
                 lifecycleSteps,
                 new WebDriverScreenshotOnFailure(driverProvider, configuration.storyReporterBuilder()));
     }
+
     @Override
     protected List<String> storyPaths() {
         return new StoryFinder().findPaths(
