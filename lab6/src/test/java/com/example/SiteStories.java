@@ -39,7 +39,7 @@ public class SiteStories extends JUnitStories {
         //For Linux
         System.setProperty(
                 PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY,
-                "linux/bin/phantomjs.exe"
+                "linux/bin/phantomjs"
         );
 //         System.setProperty("webdriver.chrome.driver", "/..../chromedriver/chromedriver");
     }
