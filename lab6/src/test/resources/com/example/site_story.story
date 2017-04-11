@@ -11,4 +11,11 @@ Given user is on logging page
 When user enters correct password
 Then the user should log in
 
+Scenario:  User enters the page again after logging in
+
+Given user is logged in
+When user enters the logging page
+Then the user should already be logged in
+
+
 

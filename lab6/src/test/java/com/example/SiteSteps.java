@@ -42,4 +42,21 @@ public class SiteSteps {
     public void logInUnsuccessful() {
         assertTrue(!pages.loginpage().logInFail().contains("Zalogowanie poprawne."));
     }
+
+    @Given("user is logged in")
+    public void userIsLoggedIn(){
+        pages.loginpage().open();
+        pages.loginpage().enterCorrectPassword();
+        pages.loginpage().logIn();
+    }
+
+    @When("user enters the logging page")
+    public void userEntersLoggingPage() {
+        pages.loginpage().open();
+    }
+
+    @Then("the user should already be logged in")
+    public void userAlreadyLoggedIn() {
+        assertNotNull(pages.loginpage().loggedIn());
+    }
 }

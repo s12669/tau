@@ -39,8 +39,12 @@ public class LoginPage extends WebDriverPage {
         return findElement(By.name("wyloguj"));
     }
 
-    public String logInFail(){
+    public String logInFail() {
         //assertTrue(html.contains("Niepoprawne hasło!"));
         return getPageSource();
+    }
+
+    public WebElement loggedIn() {
+        return findElement(By.name("wyloguj"));
     }
 }
