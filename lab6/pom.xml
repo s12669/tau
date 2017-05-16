@@ -75,7 +75,7 @@
                                 <include>**/*Steps.java</include>
                             </includes>
                             <metaFilters>
-                                <metaFilter>+author *</metaFilter>
+                                <metaFilter>+company *</metaFilter>
                                 <metaFilter>+theme *</metaFilter>
                                 <metaFilter>-skip</metaFilter>
                             </metaFilters>

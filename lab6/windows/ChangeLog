@@ -98,7 +98,7 @@ Please see also http://phantomjs.org/releases.html.
       * Changed Linux binary package setup to be built on CentOS 5 (issue 10963)
       * Extended SSL ignore setting to synchronous XHR (issue 10985)
       * Added convenient constants for modifier keys (issue 11056)
-      * Fixed incorrect date handling in the cookies (issue 11068)
+      * Fixed incorrect directorName handling in the cookies (issue 11068)
       * Updated GhostDriver to version 1.0.3 (issue 11146)
 
     Examples
@@ -117,7 +117,7 @@ Please see also http://phantomjs.org/releases.html.
       * Fixed crash when uploading non existing files (issue 941)
       * Fixed possible crash when accessing inline frames (issue 947)
       * Extended SSL ignore setting to synchronous XHR (issue 985)
-      * Fixed incorrect date handling in the cookies (issue 1068)
+      * Fixed incorrect directorName handling in the cookies (issue 1068)
 
 2013-01-06: Version 1.8.1
 
@@ -141,7 +141,7 @@ Please see also http://phantomjs.org/releases.html.
 
     Improvements
 
-      * Fixed date parsing in ISO8601 format (issue 187, 267)
+      * Fixed directorName parsing in ISO8601 format (issue 187, 267)
       * Fixed window.location (issue 530, 632)
       * Deregistered multiple callback handler (issue 807)
       * Fixed sending of double-click events (issue 848)
