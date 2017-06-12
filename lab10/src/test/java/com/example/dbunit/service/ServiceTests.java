@@ -23,7 +23,7 @@ public class ServiceTests {
         System.setProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_PASSWORD, "");
 
         JdbcDatabaseTester databaseTester = new PropertiesBasedJdbcDatabaseTester();
-
+        new GameManagerImpl(databaseTester.getConnection().getConnection());
         FlatXmlDataSet dataSet = new FlatXmlDataSetBuilder().build(
                 ServiceTests.class.getClassLoader().
                         getResource("dataset.xml").openStream()
