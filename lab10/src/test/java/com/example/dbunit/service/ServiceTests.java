@@ -2,6 +2,9 @@ package com.example.dbunit.service;
 
 import org.dbunit.JdbcDatabaseTester;
 import org.dbunit.PropertiesBasedJdbcDatabaseTester;
+import org.dbunit.dataset.xml.FlatXmlDataSet;
+import org.dbunit.dataset.xml.FlatXmlDataSetBuilder;
+import org.dbunit.operation.DatabaseOperation;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
@@ -21,14 +24,14 @@ public class ServiceTests {
 
         JdbcDatabaseTester databaseTester = new PropertiesBasedJdbcDatabaseTester();
 
-//        FlatXmlDataSet dataSet = new FlatXmlDataSetBuilder().build(
-//                ServiceTests.class.getClassLoader().
-//                        getResource("dataset.xml").openStream()
-//        );
-//
-//        databaseTester.setSetUpOperation(DatabaseOperation.CLEAN_INSERT);
-//        databaseTester.setDataSet(dataSet);
-//        databaseTester.onSetup();
+        FlatXmlDataSet dataSet = new FlatXmlDataSetBuilder().build(
+                ServiceTests.class.getClassLoader().
+                        getResource("dataset.xml").openStream()
+        );
+
+        databaseTester.setSetUpOperation(DatabaseOperation.CLEAN_INSERT);
+        databaseTester.setDataSet(dataSet);
+        databaseTester.onSetup();
     }
 
     @AfterClass

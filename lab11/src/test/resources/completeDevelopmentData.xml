@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+  <GAME ID="1" TITLE="Unannounced" DIRECTORNAME="Spock" DIRECTORSURNAME="Spocker" COMPANY="Blizzard" PRICE="60.00" DEVELOPED="true"/>
+  <GAME ID="2" TITLE="Diablo III" DIRECTORNAME="Spock" DIRECTORSURNAME="Spocker" COMPANY="Blizzard" PRICE="40.00" DEVELOPED="true"/>
+  <DEVELOPER ID="1" NAME="Bobo"/>
+  <DEVELOPER ID="2" NAME="Rusek"/>
+  <DEVELOPER_GAME DEVELOPER_ID="1" GAMES_ID="1"/>
+  <DEVELOPER_GAME DEVELOPER_ID="2" GAMES_ID="2"/>
+</dataset>
