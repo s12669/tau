@@ -52,7 +52,8 @@ public class GameManagerDBUnitTest {
 
         Developer retrievedDeveloper = gameManager.findDeveloperByName("Bobo");
         Game retrievedGame = gameManager.findGameByTitle("Unannounced");
-
+        System.out.println(retrievedDeveloper.getId());
+        System.out.println(retrievedGame.getId());
         gameManager.completeDevelopment(retrievedDeveloper.getId(), retrievedGame.getId());
 
         retrievedGame = gameManager.findGameByTitle("Unannounced");
@@ -97,7 +98,7 @@ public class GameManagerDBUnitTest {
 
         List<Game> retrievedGames = gameManager.getAllGames();
 
-        assertEquals(retrievedGames.size(),1);
+        assertEquals(1,retrievedGames.size());
 
     }
 }

@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Component
 @Transactional
@@ -93,18 +94,19 @@ public class GameManagerImpl implements GameManager {
 
     @Override
     public void deleteGame(Game game) {
-
-        if(game.getDeveloped()){
-            for (Developer d : this.getAllDevelopers())
-                if (d.getGames().contains(game)) {
-                    d.getGames().remove(game);
-                    break;
+        for (Developer d : this.getAllDevelopers()) {
+            boolean toDel = false;
+            for (Game g : d.getGames()) {
+                if (Objects.equals(g.getId(), game.getId())) {
+                    toDel = true;
                 }
+            }
+            if (toDel) {
+                d.getGames().remove(game);
+                sessionFactory.getCurrentSession().delete(game);
+            }
         }
-        sessionFactory.getCurrentSession().delete(game);
-
     }
-
     @Override
     public void completeDevelopment(Long developerId, Long gameId) {
         Developer d = (Developer) sessionFactory.getCurrentSession().get(
@@ -114,10 +116,18 @@ public class GameManagerImpl implements GameManager {
                 .get(Game.class, gameId);
         g.setDeveloped(true);
 
-        if (d.getGames() == null) {
-            d.setGames(new ArrayList<Game>());
+//        if (d.getGames() == null) {
+//            d.setGames(new ArrayList<Game>());
+//        }
+//        d.getGames().add(g);
+        boolean dane = true;
+        for (Game gg : d.getGames()) {
+            if (gg.getId() == g.getId()) {
+                dane = false;
+            }
         }
-        d.getGames().add(g);
+
+        if (dane) d.getGames().add(g);
     }
 
 

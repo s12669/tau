@@ -18,7 +18,7 @@ public class Developer {
     @Column(unique = true)
     private String name;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval=true)
     private List<Game> games;
 
     public Long getId() {
