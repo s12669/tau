@@ -1,0 +1,12 @@
+dist: trusty
+sudo: required
+language:
+  - cpp
+compiler:
+  - gcc
+
+script: 
+  - cd lab13
+  - mkdir build
+  - make tests
+  
