@@ -1,6 +1,8 @@
 package com.example.domain;
 
 import javax.persistence.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -21,7 +23,12 @@ public class Developer {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval=true)
     private List<Game> games;
 
-    public Long getId() {
+    
+    public Developer() {
+		this.games = new ArrayList<Game>();
+	}
+
+	public Long getId() {
         return id;
     }
 
@@ -44,4 +51,13 @@ public class Developer {
     public void setGames(List<Game> games) {
         this.games = games;
     }
+    public void addGame(Game game){
+    	this.games.add(game);
+    }
+	@Override
+	public String toString() {
+		return "Developer [id=" + id + ", name=" + name + ", games=" + games + "]";
+	}
+    
+    
 }

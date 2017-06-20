@@ -94,4 +94,11 @@ public class Game {
     public void setDeveloped(Boolean developed) {
         this.developed = developed;
     }
+
+	@Override
+	public String toString() {
+		return "Game [id=" + id + ", title=" + title + ", directorName=" + directorName + ", directorSurname="
+				+ directorSurname + ", company=" + company + ", price=" + price + ", developed=" + developed + "]";
+	}
+    
 }

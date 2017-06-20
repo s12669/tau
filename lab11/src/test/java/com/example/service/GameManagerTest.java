@@ -97,6 +97,7 @@ public class GameManagerTest {
         Developer d = new Developer();
         d.setName(NAME_1);
         gameManager.addDeveloper(d);
+        assertEquals(gameManager.getAllDevelopers().size(), 1);
 
         Game game = new Game();
         game.setTitle(TITLE_1);
@@ -107,6 +108,7 @@ public class GameManagerTest {
         game.setDeveloped(false);
         gameManager.addGame(game);
 
+        assertEquals(gameManager.getAllGames().size(), 1);
         Game retrievedGame = gameManager.findGameByTitle(TITLE_1);
         Developer retrievedDeveloper = gameManager.findDeveloperByName(NAME_1);
 

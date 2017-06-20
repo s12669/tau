@@ -115,6 +115,7 @@ public class GameManagerImpl implements GameManager {
         Game g = (Game) sessionFactory.getCurrentSession()
                 .get(Game.class, gameId);
         g.setDeveloped(true);
+       
 
 //        if (d.getGames() == null) {
 //            d.setGames(new ArrayList<Game>());
