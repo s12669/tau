@@ -7,6 +7,5 @@ compiler:
 
 script: 
   - cd lab13
-  - mkdir build
   - make tests
   
