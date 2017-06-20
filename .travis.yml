@@ -1,0 +1,12 @@
+dist: trusty
+sudo: required
+group: edge
+language:
+  - cpp
+compiler:
+  - gcc
+
+script: 
+  - cd lab13
+  - make tests
+  
