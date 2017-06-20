@@ -50,23 +50,23 @@ TEST_CASE("check multiplication","[VectorLib][multipleByVector]") {
     }
 }
 
-SCENARIO("Scietific calculations") {
-    VectorLib v1(6,3);
-    VectorLib v2(1,1);
-    VectorLib v3(2,2);
+SCENARIO("Behavioral") {
+    VectorLib v1(7,1);
+    VectorLib v2(3,2);
+    VectorLib v3(5,10);
 
     GIVEN("3 vectors were successfully created") {
         REQUIRE(&v1 != NULL);
         REQUIRE(&v2 != NULL);
         REQUIRE(&v3 != NULL);
 
-        WHEN("Added second vector to first and myltiplied result with 3rd vector") {
-            REQUIRE_NOTHROW(v1.addVector(v2));
-            REQUIRE_NOTHROW(v1.multiplyByVector(v3));
+        WHEN("Multiplied first and second vector and added result to third vector") {
+            REQUIRE_NOTHROW(v1.multiplyByVector(v2));
+            REQUIRE_NOTHROW(v1.addVector(v3));
             
             THEN("The first vector should have value (14,8)") {
-                REQUIRE(v1.x == 14);
-                REQUIRE(v1.y == 8);
+                REQUIRE(v1.x == 26);
+                REQUIRE(v1.y == 12);
             }
         }
     }
