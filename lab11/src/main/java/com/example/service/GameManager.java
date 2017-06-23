@@ -1,7 +1,5 @@
 package com.example.service;
 
-// w oparciu o przyklad J Neumanna, przerobiony przez T Puzniakowskiego
-
 import com.example.domain.Developer;
 import com.example.domain.Game;
 
@@ -11,8 +9,6 @@ public interface GameManager {
 
     void deleteGame(Game game);
 
-    void updateGame(Game game);
-
     void addGame(Game game);
 
     List<Game> getAllGames();
@@ -21,14 +17,9 @@ public interface GameManager {
 
     Game findGameByTitle(String title);
 
-    List<Game> getGamesDeveloped();
-
     void clearAllTables();
 
-
     void addDeveloper(Developer developer);
-
-    void updateDeveloper(Developer developer);
 
     void deleteDeveloper(Developer developer);
 

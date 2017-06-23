@@ -40,6 +40,7 @@ public class GameManagerDBUnitTest {
 
 
     @Autowired
+    private
     GameManager gameManager;
 
     @Test

@@ -29,6 +29,7 @@ import static org.junit.Assert.assertEquals;
 public class GameManagerTest {
 
     @Autowired
+    private
     GameManager gameManager;
 
     private final String NAME_1 = "Bobo";

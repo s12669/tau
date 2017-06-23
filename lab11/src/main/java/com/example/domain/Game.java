@@ -27,18 +27,6 @@ public class Game {
 
     private Boolean developed;
 
-//    public Game() {
-//    }
-//
-//    public Game(String title, String directorName, String directorSurname, String company, String price) {
-//        super();
-//        this.title = title;
-//        this.directorName = directorName;
-//        this.directorSurname = directorSurname;
-//        this.company = company;
-//        this.price = price;
-//    }
-
     public Long getId() {
         return id;
     }
@@ -61,10 +49,6 @@ public class Game {
 
     public void setDirectorName(String directorName) {
         this.directorName = directorName;
-    }
-
-    public String getDirectorSurname() {
-        return directorSurname;
     }
 
     public void setDirectorSurname(String directorSurname) {
@@ -95,10 +79,10 @@ public class Game {
         this.developed = developed;
     }
 
-	@Override
-	public String toString() {
-		return "Game [id=" + id + ", title=" + title + ", directorName=" + directorName + ", directorSurname="
-				+ directorSurname + ", company=" + company + ", price=" + price + ", developed=" + developed + "]";
-	}
-    
+    @Override
+    public String toString() {
+        return "Game [id=" + id + ", title=" + title + ", directorName=" + directorName + ", directorSurname="
+                + directorSurname + ", company=" + company + ", price=" + price + ", developed=" + developed + "]";
+    }
+
 }
